@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>初识Vue</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <h1>学校,{{school.name}}</h1>
+        <h1>地址,{{school.address}}</h1>
+        <h1>学科,{{school.subject()}}</h1>
+        <hr/>
+    </div>
+
+    <script type="text/javascript">
+        //创建一个Vue的实例对象,并传入配置对象
+        new Vue({
+            el: "#root", //el用于指定当前Vue实例为哪个容器服务，值是选择器字符串
+            data: { //data是存储数据的地方，为root容器提供数据，值为一个对象
+                school: {
+                    name: 'atgiugu',
+                    address: '宏福科技园',
+                    subject: () => '前端'
+                }
+
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
