@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+
+<body>
+    <!-- 
+        1.M：模型(Model)：对应data中的数据
+        2.V：视图(Viewe)：模板代码
+        3.VM：视图模型(ViewModel)：Vue实例对象
+     -->
+    <div id="root">
+        <h2>Hell,{{msg}}</h2>
+    </div>
+
+    <script type="text/javascript">
+        //第一种写法(常用)
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                msg: '尚硅谷'
+            }
+        })
+
+        //第二种写法
+        // const vm = new Vue({
+        //     data: {
+        //         msg: '尚硅谷'
+        //     }
+        // })
+        // vm.$mount('#root')
+
+        setTimeout(() => {
+            console.log(vm.msg)
+            vm.msg = 'atguigu'
+        }, 1000)
+    </script>
+</body>
+
+</html>
